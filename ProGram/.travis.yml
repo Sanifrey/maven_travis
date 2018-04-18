@@ -1,4 +1,4 @@
-language: java
+language: python
 install: ant deps
 script: ant test
 jdk:
