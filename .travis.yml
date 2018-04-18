@@ -1,3 +1,14 @@
 language: java
 jdk:
-- oraclejdk8
+- oraclejdk9
+env:
+  global:
+    - JVMCI_VERSION="jvmci-0.42"
+    - JVMCI_BASE_JDK8="openjdk1.8.0_141"
+  matrix:
+    - JDK="jdk8" GATE="style,fullbuild"
+    - JDK="jdk8" GATE="build,test"
+    - JDK="jdk8" GATE="build,bootstraplite"
+    - JDK="jdk9" GATE="style,fullbuild"
+    - JDK="jdk9" GATE="build,test"
+- JDK="jdk9" GATE="build,bootstraplite"
